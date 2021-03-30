@@ -82,7 +82,7 @@
 				const end = index;
 				const subset = total.slice(start, end + 1);
 				const sum = subset.reduce((a, b) => {
-					return a + b['data'];
+					return a + b['sms'];
 				}, 0);
 				return {
 					date: row['epochDateTime'],
@@ -94,8 +94,8 @@
 		console.log('Render...');
 		const xMin = d3.min(data[0][1], d=> { return d['epochDateTime']; });
 		const xMax = d3.max(data[0][1], d=> { return d['epochDateTime']; });
-		const yMin = d3.min(data[0][1], d=> { return d['data']; });
-		const yMax = d3.max(data[0][1], d=> { return d['data']; });
+		const yMin = d3.min(data[0][1], d=> { return d['sms']; });
+		const yMax = d3.max(data[0][1], d=> { return d['sms']; });
 		// scales for the charts
 		const xScale = d3
 			.scaleTime()
@@ -124,7 +124,7 @@
 				return xScale(d['epochDateTime']);
 			})
 			.y(d => {
-				return yScale(d['data']);
+				return yScale(d['sms']);
 			});
 
 		// Append the path and bind data

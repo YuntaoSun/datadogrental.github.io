@@ -4,107 +4,159 @@
         "stats": [
             {
                 "date": "03-04-21",
-                "rentals": 43
+                "rentals": 43,
+                "data": 1007,
+                "sms": 183
             },
             {
                 "date": "03-05-21",
-                "rentals": 44
+                "rentals": 44,
+                "data": 1055,
+                "sms": 147
             },
             {
                 "date": "03-06-21",
-                "rentals": 30
+                "rentals": 30,
+                "data": 1130,
+                "sms": 95
             },
             {
                 "date": "03-07-21",
-                "rentals": 40
+                "rentals": 40,
+                "data": 1025,
+                "sms": 111
             },
             {
                 "date": "03-08-21",
-                "rentals": 22
+                "rentals": 22,
+                "data": 938,
+                "sms": 98
             },
             {
                 "date": "03-09-21",
-                "rentals": 30
+                "rentals": 30,
+                "data": 891,
+                "sms": 182
             },
             {
                 "date": "03-10-21",
-                "rentals": 46
+                "rentals": 46,
+                "data": 904,
+                "sms": 239
             },
             {
                 "date": "03-11-21",
-                "rentals": 27
+                "rentals": 27,
+                "data": 925,
+                "sms": 264
             },
             {
                 "date": "03-12-21",
-                "rentals": 46
+                "rentals": 46,
+                "data": 991,
+                "sms": 257
             },
             {
                 "date": "03-13-21",
-                "rentals": 56
+                "rentals": 56,
+                "data": 1115,
+                "sms": 222
             },
             {
                 "date": "03-14-21",
-                "rentals": 30
+                "rentals": 30,
+                "data": 1066,
+                "sms": 143
             },
             {
                 "date": "03-15-21",
-                "rentals": 34
+                "rentals": 34,
+                "data": 1074,
+                "sms": 422
             },
             {
                 "date": "03-16-21",
-                "rentals": 30
+                "rentals": 30,
+                "data": 1039,
+                "sms": 331
             },
             {
                 "date": "03-17-21",
-                "rentals": 57
+                "rentals": 57,
+                "data": 1143,
+                "sms": 526
             },
             {
                 "date": "03-18-21",
-                "rentals": 112
+                "rentals": 112,
+                "data": 1135,
+                "sms": 629
             },
             {
                 "date": "03-19-21",
-                "rentals": 144
+                "rentals": 144,
+                "data": 1136,
+                "sms": 623
             },
             {
                 "date": "03-20-21",
-                "rentals": 152
+                "rentals": 152,
+                "data": 1353,
+                "sms": 713
             },
             {
                 "date": "03-21-21",
-                "rentals": 117
+                "rentals": 117,
+                "data": 1229,
+                "sms": 555
             },
             {
                 "date": "03-22-21",
-                "rentals": 113
+                "rentals": 113,
+                "data": 1191,
+                "sms": 673
             },
             {
                 "date": "03-23-21",
-                "rentals": 123
+                "rentals": 123,
+                "data": 1249,
+                "sms": 1760
             },
             {
                 "date": "03-24-21",
-                "rentals": 185
+                "rentals": 185,
+                "data": 1192,
+                "sms": 1510
             },
             {
                 "date": "03-25-21",
-                "rentals": 173
+                "rentals": 173,
+                "data": 1103,
+                "sms": 752
             },
             {
                 "date": "03-26-21",
-                "rentals": 260
+                "rentals": 260,
+                "data": 1244,
+                "sms": 1267
             },
             {
                 "date": "03-27-21",
-                "rentals": 235
+                "rentals": 235,
+                "data": 1274,
+                "sms": 1021
             },
             {
                 "date": "03-28-21",
-                "rentals": 166
+                "rentals": 166,
+                "data": 998,
+                "sms": 837
             },
             {
-                "date": "3/29/2021",
-                "rentals": 153
+                "date": "3-29-2021",
+                "rentals": 153,
+                "sms": 872,
+                "data": 990
             }
         ]
     },
@@ -144,7 +196,7 @@
                 "rentals": 20
             },
             {
-                "date": "3/29/2021",
+                "date": "3-29-21",
                 "rentals": 37
             }
         ]

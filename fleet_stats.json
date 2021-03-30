@@ -1,0 +1,152 @@
+[
+    {
+        "fleetID": "darwin-prod",
+        "stats": [
+            {
+                "date": "03-04-21",
+                "rentals": 43
+            },
+            {
+                "date": "03-05-21",
+                "rentals": 44
+            },
+            {
+                "date": "03-06-21",
+                "rentals": 30
+            },
+            {
+                "date": "03-07-21",
+                "rentals": 40
+            },
+            {
+                "date": "03-08-21",
+                "rentals": 22
+            },
+            {
+                "date": "03-09-21",
+                "rentals": 30
+            },
+            {
+                "date": "03-10-21",
+                "rentals": 46
+            },
+            {
+                "date": "03-11-21",
+                "rentals": 27
+            },
+            {
+                "date": "03-12-21",
+                "rentals": 46
+            },
+            {
+                "date": "03-13-21",
+                "rentals": 56
+            },
+            {
+                "date": "03-14-21",
+                "rentals": 30
+            },
+            {
+                "date": "03-15-21",
+                "rentals": 34
+            },
+            {
+                "date": "03-16-21",
+                "rentals": 30
+            },
+            {
+                "date": "03-17-21",
+                "rentals": 57
+            },
+            {
+                "date": "03-18-21",
+                "rentals": 112
+            },
+            {
+                "date": "03-19-21",
+                "rentals": 144
+            },
+            {
+                "date": "03-20-21",
+                "rentals": 152
+            },
+            {
+                "date": "03-21-21",
+                "rentals": 117
+            },
+            {
+                "date": "03-22-21",
+                "rentals": 113
+            },
+            {
+                "date": "03-23-21",
+                "rentals": 123
+            },
+            {
+                "date": "03-24-21",
+                "rentals": 185
+            },
+            {
+                "date": "03-25-21",
+                "rentals": 173
+            },
+            {
+                "date": "03-26-21",
+                "rentals": 260
+            },
+            {
+                "date": "03-27-21",
+                "rentals": 235
+            },
+            {
+                "date": "03-28-21",
+                "rentals": 166
+            },
+            {
+                "date": "3/29/2021",
+                "rentals": 153
+            }
+        ]
+    },
+    {
+        "fleetID": "dragon-prod",
+        "stats": [
+            {
+                "date": "03-21-21",
+                "rentals": 7
+            },
+            {
+                "date": "03-22-21",
+                "rentals": 14
+            },
+            {
+                "date": "03-23-21",
+                "rentals": 13
+            },
+            {
+                "date": "03-24-21",
+                "rentals": 17
+            },
+            {
+                "date": "03-25-21",
+                "rentals": 19
+            },
+            {
+                "date": "03-26-21",
+                "rentals": 25
+            },
+            {
+                "date": "03-27-21",
+                "rentals": 22
+            },
+            {
+                "date": "03-28-21",
+                "rentals": 20
+            },
+            {
+                "date": "3/29/2021",
+                "rentals": 37
+            }
+        ]
+    }
+]

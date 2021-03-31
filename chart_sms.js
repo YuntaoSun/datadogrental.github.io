@@ -16,7 +16,7 @@ const loadData = d3.json('https://mbsoft.github.io/fleet_stats_updated.json').th
       const end = index;
       const subset = total.slice(start, end + 1);
       const sum = subset.reduce((a, b) => {
-        return a + b['data'];
+        return a + b['sms'];
       }, 0);
   
       return {
@@ -87,11 +87,11 @@ const loadData = d3.json('https://mbsoft.github.io/fleet_stats_updated.json').th
     });
   
     const yMin = d3.min(data, d => {
-      return d['data'];
+      return d['sms'];
     });
   
     const yMax = d3.max(data, d => {
-      return d['data'];
+      return d['sms'];
     });
   
     // scale using range
@@ -128,7 +128,6 @@ const loadData = d3.json('https://mbsoft.github.io/fleet_stats_updated.json').th
       .attr('transform', `translate(${width}, 0)`)
       .call(d3.axisRight(yScale));
   
-    // renders close price line chart and moving average line chart
   
     // generates lines when called
     const line = d3
@@ -137,7 +136,7 @@ const loadData = d3.json('https://mbsoft.github.io/fleet_stats_updated.json').th
         return xScale(d['date']);
       })
       .y(d => {
-        return yScale(d['data']);
+        return yScale(d['sms']);
       });
   
     const movingAverageLine = d3
@@ -196,7 +195,7 @@ const loadData = d3.json('https://mbsoft.github.io/fleet_stats_updated.json').th
     d3.selectAll('.focus line').style('stroke-width', '1.5px');
     d3.selectAll('.focus line').style('stroke-dasharray', '3 3');
   
-    //returs insertion point
+    //returns insertion point
     const bisectDate = d3.bisector(d => d.date).left;
   
     /* mouseover function to generate crosshair */
@@ -212,7 +211,7 @@ const loadData = d3.json('https://mbsoft.github.io/fleet_stats_updated.json').th
       focus.attr(
         'transform',
         `translate(${xScale(currentPoint['date'])}, ${yScale(
-          currentPoint['data']
+          currentPoint['sms']
         )})`
       );
   
@@ -228,7 +227,7 @@ const loadData = d3.json('https://mbsoft.github.io/fleet_stats_updated.json').th
         .attr('x1', 0)
         .attr('x2', 0)
         .attr('y1', 0)
-        .attr('y2', height - yScale(currentPoint['data']));
+        .attr('y2', height - yScale(currentPoint['sms']));
   
       // updates the legend to display the date, open, close, high, low, and volume of the selected mouseover area
       updateLegends(currentPoint);
@@ -256,13 +255,14 @@ const loadData = d3.json('https://mbsoft.github.io/fleet_stats_updated.json').th
           } else if (
             d === 'data' ||
             d === 'sms' ||
-            d === 'rentals' 
+            d === 'rentals'
           ) {
             return `${d}: ${currentData[d].toFixed(0)}`;
           } else {
             return `${d}: ${currentData[d]}`;
           }
         })
+        .style('fill', 'white')
         .style('fill', '#9e1d39')
         .style('font-family', 'NotoSans,Lucida Grande,Lucida Sans Unicode,sans-serif')
         .style('font-weight', 'bold')
@@ -310,7 +310,7 @@ const loadData = d3.json('https://mbsoft.github.io/fleet_stats_updated.json').th
         return height - yVolumeScale(d['rentals']);
       });
     // testing axis for volume
-    /*
+    
     svg.append('g').call(d3.axisLeft(yVolumeScale));
-    */
+    
   };

@@ -309,8 +309,7 @@ const loadData = d3.json('https://mbsoft.github.io/fleet_stats_updated.json').th
       .attr('height', d => {
         return height - yVolumeScale(d['rentals']);
       });
-    // testing axis for volume
-    
+
     svg.append('g').call(d3.axisLeft(yVolumeScale));
     
   };

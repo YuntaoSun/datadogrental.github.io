@@ -10,6 +10,22 @@ const loadData = d3.json('https://mbsoft.github.io/fleet_stats_updated.json').th
     }));
   });
   
+  const movingAverageRentals = (data, numberOfPricePoints) => {
+    return data.map((row, index, total) => {
+      const start = Math.max(0, index - numberOfPricePoints);
+      const end = index;
+      const subset = total.slice(start, end + 1);
+      const sum = subset.reduce((a, b) => {
+        return a + b['rentals'];
+      }, 0);
+  
+      return {
+        date: row['date'],
+        average: sum / subset.length
+      };
+    });
+  };
+
   const movingAverage = (data, numberOfPricePoints) => {
     return data.map((row, index, total) => {
       const start = Math.max(0, index - numberOfPricePoints);
@@ -140,6 +156,9 @@ const loadData = d3.json('https://mbsoft.github.io/fleet_stats_updated.json').th
         return yScale(d['data']);
       });
   
+
+
+
     const movingAverageLine = d3
       .line()
       .x(d => {
@@ -159,15 +178,19 @@ const loadData = d3.json('https://mbsoft.github.io/fleet_stats_updated.json').th
       .attr('stroke-width', '1.5')
       .attr('d', line);
   
-    // calculates simple moving average over 50 days
+    // calculates simple moving average over 15 days
+    const movingAverageDataRentals = movingAverageRentals(data, 15);
     const movingAverageData = movingAverage(data, 15);
+
+
+
     svg
-      .append('path')
-      .data([movingAverageData])
-      .style('fill', 'none')
-      .attr('id', 'movingAverageLine')
-      .attr('stroke', '#FF8900')
-      .attr('d', movingAverageLine);
+        .append('path')
+        .data([movingAverageData])
+        .style('fill', 'none')
+        .attr('id', 'movingAverageLine')
+        .attr('stroke', '#FF8900')
+        .attr('d', movingAverageLine);
   
     // renders x and y crosshair
     const focus = svg
@@ -309,6 +332,24 @@ const loadData = d3.json('https://mbsoft.github.io/fleet_stats_updated.json').th
       .attr('height', d => {
         return height - yVolumeScale(d['rentals']);
       });
+
+    const movingAverageRentalsLine = d3
+      .line()
+      .x(d => {
+        return xScale(d['date']);
+      })
+      .y(d => {
+        return yVolumeScale(d['average']);
+      })
+      .curve(d3.curveBasis);
+
+    svg
+      .append('path')
+      .data([movingAverageDataRentals])
+      .style('fill', 'none')
+      .attr('id', 'movingAverageRentalsLine')
+      .attr('stroke', '#33da79')
+      .attr('d', movingAverageRentalsLine);
 
     svg.append('g').call(d3.axisLeft(yVolumeScale));
     

@@ -34,7 +34,8 @@
             <!-- <label style="color: #12117e;font-family: 'Courier New', Courier, monospace;font-weight:bold;font-size:96px">Total Rentals</label><br> -->
             <span class="countGig" style="color: #9e1d39;font-family: NotoSans,Lucida Grande,Lucida Sans Unicode,sans-serif;;font-weight:bold;font-size:150px"></span><br>
             <label style="color: #9e1d39;font-family: NotoSans,Lucida Grande,Lucida Sans Unicode,sans-serif;;font-weight:bold;font-size:40px">Darwin</label><span class="countFleet1" style="margin-left:120px; color: #9e1d39;font-family: NotoSans,Lucida Grande,Lucida Sans Unicode,sans-serif;;font-weight:bold;font-size:40px"></span><br>
-            <label style="color: #9e1d39;font-family: NotoSans,Lucida Grande,Lucida Sans Unicode,sans-serif;;font-weight:bold;font-size:40px">Dragon</label><span class="countFleet2" style="margin-left:120px; color: #9e1d39;font-family: NotoSans,Lucida Grande,Lucida Sans Unicode,sans-serif;;font-weight:bold;font-size:40px"></span>
+            <label style="color: #9e1d39;font-family: NotoSans,Lucida Grande,Lucida Sans Unicode,sans-serif;;font-weight:bold;font-size:40px">Dragon</label><span class="countFleet2" style="margin-left:120px; color: #9e1d39;font-family: NotoSans,Lucida Grande,Lucida Sans Unicode,sans-serif;;font-weight:bold;font-size:40px"></span><br><br>
+			<label style="color: #9e1d39;font-family: NotoSans,Lucida Grande,Lucida Sans Unicode,sans-serif;;font-weight:bold;font-size:18px">Updated</label><span class="updated" style="margin-left:50px; color: #9e1d39;font-family: NotoSans,Lucida Grande,Lucida Sans Unicode,sans-serif;;font-weight:bold;font-size:18px"></span>
 
         </div>
 	<script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
@@ -47,7 +48,7 @@
     var total = 0;
     var fleetTotal = [0,0];
     d3.json(DATA_URL).then(function(d) {
-        data = d.map(d => [d.fleetID, d.stats]);
+        data = d.map(d => [d.fleetID, d.stats, d.updated]);
         var fleetIndex = 0;
         data.forEach(function(d){
 
@@ -62,6 +63,7 @@
         d3.select('#gig .countGig').text(total);
         d3.select('#gig .countFleet1').text(fleetTotal[0]);
         d3.select('#gig .countFleet2').text(fleetTotal[1]);
+		d3.select('#gig .updated').text(data[0][2]);
     });
 
     </script>

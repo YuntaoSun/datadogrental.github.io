@@ -142,6 +142,9 @@ const loadData = d3.json('https://mbsoft.github.io/fleet_stats_updated.json').th
       .append('g')
       .attr('id', 'yAxis')
       .attr('transform', `translate(${width}, 0)`)
+      .style('color', '#67809f')
+      .style('font-family', 'NotoSans,Lucida Grande,Lucida Sans Unicode,sans-serif')
+      .style('font-weight', 'bold')
       .call(d3.axisRight(yScale));
   
     // renders close price line chart and moving average line chart
@@ -325,7 +328,7 @@ const loadData = d3.json('https://mbsoft.github.io/fleet_stats_updated.json').th
         if (i === 0) {
           return '#03a678';
         } else {
-          return volData[i - 1].rentals > d.rentals ? '#c0392b' : '#03a678'; // green bar if price is rising during that period, and red when price  is falling
+          return volData[i - 1].rentals > movingAverageDataRentals[i-1].rentals ? '#c0392b' : '#03a678'; // green bar if price is rising during that period, and red when price  is falling
         }
       })
       .attr('width', 12)
@@ -351,6 +354,11 @@ const loadData = d3.json('https://mbsoft.github.io/fleet_stats_updated.json').th
       .attr('stroke', '#33da79')
       .attr('d', movingAverageRentalsLine);
 
-    svg.append('g').call(d3.axisLeft(yVolumeScale));
+    svg
+        .append('g').call(d3.axisLeft(yVolumeScale))
+        .style('color', '#03a678')
+        .style('font-family', 'NotoSans,Lucida Grande,Lucida Sans Unicode,sans-serif')
+        .style('font-weight', 'bold');
+        
     
   };

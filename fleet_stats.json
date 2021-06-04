@@ -1,7 +1,7 @@
 [
     {
         "fleetID": "darwin-prod",
-        "updated": "06-03-21 19:00",
+        "updated": "06-04-21 08:00",
         "stats": [
             {
                 "date": "03-04-21",
@@ -424,12 +424,16 @@
             {
                 "date": "06-03-21",
                 "rentals": 293
+            },
+            {
+                "date": "06-04-21",
+                "rentals": 121
             }
         ]
     },
     {
         "fleetID": "dragon-prod",
-        "updated": "06-03-21 19:00",
+        "updated": "06-04-21 08:00",
         "stats": [
             {
                 "date": "03-21-21",
@@ -730,6 +734,10 @@
             {
                 "date": "06-03-21",
                 "rentals": 127
+            },
+            {
+                "date": "06-04-21",
+                "rentals": 82
             }
         ]
     }

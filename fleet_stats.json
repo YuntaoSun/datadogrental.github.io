@@ -940,5 +940,15 @@
                 "rentals": 178
             }
         ]
+    },
+    {
+        "fleetID": "hercules-prod",
+        "updated": "06-29-21 12:00",
+        "stats": [
+            {
+                "date": "06-29-21",
+                "rentals": 5
+            }
+        ]
     }
 ]

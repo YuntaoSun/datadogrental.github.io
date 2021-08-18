@@ -1,7 +1,6 @@
 [
     {
         "fleetID": "darwin-prod",
-        "updated": "08-10-21 08:00",
         "stats": [
             {
                 "date": "03-04-21",
@@ -695,13 +694,45 @@
             },
             {
                 "date": "08-10-21",
-                "rentals": 213
+                "rentals": 422
+            },
+            {
+                "date": "08-11-21",
+                "rentals": 456
+            },
+            {
+                "date": "08-12-21",
+                "rentals": 656
+            },
+            {
+                "date": "08-13-21",
+                "rentals": 590
+            },
+            {
+                "date": "08-14-21",
+                "rentals": 656
+            },
+            {
+                "date": "08-15-21",
+                "rentals": 544
+            },
+            {
+                "date": "08-16-21",
+                "rentals": 660
+            },
+            {
+                "date": "08-17-21",
+                "rentals": 586
+            },
+            {
+                "date": "08-18-21",
+                "rentals": 419
             }
-        ]
+        ],
+        "updated": "08-18-21 14:51"
     },
     {
         "fleetID": "dragon-prod",
-        "updated": "08-10-21 08:00",
         "stats": [
             {
                 "date": "03-21-21",
@@ -1273,13 +1304,45 @@
             },
             {
                 "date": "08-10-21",
-                "rentals": 68
+                "rentals": 131
+            },
+            {
+                "date": "08-11-21",
+                "rentals": 162
+            },
+            {
+                "date": "08-12-21",
+                "rentals": 146
+            },
+            {
+                "date": "08-13-21",
+                "rentals": 193
+            },
+            {
+                "date": "08-14-21",
+                "rentals": 246
+            },
+            {
+                "date": "08-15-21",
+                "rentals": 181
+            },
+            {
+                "date": "08-16-21",
+                "rentals": 147
+            },
+            {
+                "date": "08-17-21",
+                "rentals": 117
+            },
+            {
+                "date": "08-18-21",
+                "rentals": 127
             }
-        ]
+        ],
+        "updated": "08-18-21 14:51"
     },
     {
         "fleetID": "hercules-prod",
-        "updated": "06-29-21 12:00",
         "stats": [
             {
                 "date": "06-29-21",
@@ -1451,8 +1514,41 @@
             },
             {
                 "date": "08-10-21",
+                "rentals": 2
+            },
+            {
+                "date": "08-11-21",
+                "rentals": 10
+            },
+            {
+                "date": "08-12-21",
+                "rentals": 4
+            },
+            {
+                "date": "08-13-21",
+                "rentals": 0
+            },
+            {
+                "date": "08-14-21",
+                "rentals": 0
+            },
+            {
+                "date": "08-15-21",
+                "rentals": 0
+            },
+            {
+                "date": "08-16-21",
+                "rentals": 0
+            },
+            {
+                "date": "08-17-21",
+                "rentals": 0
+            },
+            {
+                "date": "08-18-21",
                 "rentals": 0
             }
-        ]
+        ],
+        "updated": "08-18-21 14:51"
     }
 ]

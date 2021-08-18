@@ -1,47 +1,47 @@
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Aggregate Rental Stats</title>
-		<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic" rel="stylesheet">
-				<style>
-					.hexbin-hexagon {
-						stroke: #000;
-						stroke-width: .5px;
-					}
-					.hexbin-container:hover .hexbin-hexagon {
-						transition: 1200ms;
-						stroke: orange;
-						stroke-width: 6px;
-						stroke-opacity: 1;
-					}
-				
-					.hexbin-tooltip {
-						padding: 8px;
-						border-radius: 4px;
-						border: 1px solid black;
-						background-color: white;
-					}
-					.hexbin-rssi {
-						font-family: 'Courier New', Courier, monospace;
-						font-size: large;
-						color:black;
-					}
-				</style>
-	</head>
-	<body>
+<head>
+    <meta charset="UTF-8">
+    <title>Aggregate Stats</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic" rel="stylesheet">
+    <style>
+        .hexbin-hexagon {
+            stroke: #000;
+            stroke-width: .5px;
+        }
+        .hexbin-container:hover .hexbin-hexagon {
+            transition: 1200ms;
+            stroke: orange;
+            stroke-width: 6px;
+            stroke-opacity: 1;
+        }
 
-        <div id="gig">
-            <!-- <label style="color: #12117e;font-family: 'Courier New', Courier, monospace;font-weight:bold;font-size:96px">Total Rentals</label><br> -->
-            <span class="countGig" style="color: #9e1d39;font-family: NotoSans,Lucida Grande,Lucida Sans Unicode,sans-serif;;font-weight:bold;font-size:150px"></span><br>
-            <label style="color: #9e1d39;font-family: NotoSans,Lucida Grande,Lucida Sans Unicode,sans-serif;;font-weight:bold;font-size:40px">Darwin</label><span class="countFleet1" style="margin-left:120px; color: #9e1d39;font-family: NotoSans,Lucida Grande,Lucida Sans Unicode,sans-serif;;font-weight:bold;font-size:40px"></span><br>
-            <label style="color: #9e1d39;font-family: NotoSans,Lucida Grande,Lucida Sans Unicode,sans-serif;;font-weight:bold;font-size:40px">Dragon</label><span class="countFleet2" style="margin-left:120px; color: #9e1d39;font-family: NotoSans,Lucida Grande,Lucida Sans Unicode,sans-serif;;font-weight:bold;font-size:40px"></span><br><br>
-			<label style="color: #9e1d39;font-family: NotoSans,Lucida Grande,Lucida Sans Unicode,sans-serif;;font-weight:bold;font-size:18px">Updated</label><span class="updated" style="margin-left:50px; color: #9e1d39;font-family: NotoSans,Lucida Grande,Lucida Sans Unicode,sans-serif;;font-weight:bold;font-size:18px"></span>
+        .hexbin-tooltip {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid black;
+            background-color: white;
+        }
+        .hexbin-rssi {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: large;
+            color:black;
+        }
+    </style>
+</head>
+<body>
 
-        </div>
-	<script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
-	<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-    <script>
-    const DATA_URL = "https://mbsoft.github.io/fleet_stats.json";
+<div id="gig">
+    <!-- <label style="color: #12117e;font-family: 'Courier New', Courier, monospace;font-weight:bold;font-size:96px">Total Rentals</label><br> -->
+    <span class="countGig" style="color: #9e1d39;font-family: NotoSans,Lucida Grande,Lucida Sans Unicode,sans-serif;;font-weight:bold;font-size:150px"></span><br>
+    <label style="color: #9e1d39;font-family: NotoSans,Lucida Grande,Lucida Sans Unicode,sans-serif;;font-weight:bold;font-size:40px">Darwin</label><span class="countFleet1" style="margin-left:120px; color: #9e1d39;font-family: NotoSans,Lucida Grande,Lucida Sans Unicode,sans-serif;;font-weight:bold;font-size:40px"></span><br>
+    <label style="color: #9e1d39;font-family: NotoSans,Lucida Grande,Lucida Sans Unicode,sans-serif;;font-weight:bold;font-size:40px">Dragon</label><span class="countFleet2" style="margin-left:120px; color: #9e1d39;font-family: NotoSans,Lucida Grande,Lucida Sans Unicode,sans-serif;;font-weight:bold;font-size:40px"></span><br><br>
+    <label style="color: #9e1d39;font-family: NotoSans,Lucida Grande,Lucida Sans Unicode,sans-serif;;font-weight:bold;font-size:18px">Updated</label><span class="updated" style="margin-left:50px; color: #9e1d39;font-family: NotoSans,Lucida Grande,Lucida Sans Unicode,sans-serif;;font-weight:bold;font-size:18px"></span>
+
+</div>
+<script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script>
+    const DATA_URL = "https://github.com/YuntaoSun/datadogrental.github.io/blob/master/fleet_stats.json";
 
     var data = [];
     var dayData = [];
@@ -63,10 +63,10 @@
         d3.select('#gig .countGig').text(total);
         d3.select('#gig .countFleet1').text(fleetTotal[0]);
         d3.select('#gig .countFleet2').text(fleetTotal[1]);
-		d3.select('#gig .updated').text(data[0][2]);
+        d3.select('#gig .updated').text(data[0][2]);
     });
 
-    </script>
-    
-    </body>
+</script>
+
+</body>
 </html>

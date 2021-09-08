@@ -2,7 +2,6 @@ const axios = require('axios');
 
 class DatadogClient {
     constructor() {
-        this.axios = axios;
     }
 
     async createIntakeLog(msg) {
@@ -25,7 +24,7 @@ class DatadogClient {
     }
 
     async sendIntakeRequest(method, url, body) {
-        const response = await this.axios({
+        const response = await axios({
             method,
             url: 'https://http-intake.logs.datadoghq.com' + url,
             headers: {
@@ -40,7 +39,7 @@ class DatadogClient {
 
     async sendRequest(method, url, body) {
         console.log(`Sending request to Datadog - ${JSON.stringify(body)}`);
-        const response = await this.axios({
+        const response = await axios({
             method,
             url: 'https://api.datadoghq.com' + url,
             headers: {

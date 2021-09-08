@@ -4,15 +4,15 @@ const git = simpleGit();
 const fs = require('fs');
 const moment = require('moment');
 const DatadogClient = require('./DatadogClient');
-const AxiosWrapper = require('axios-wrapper');
 const DATA_URL = './fleet_stats.json';
 
 (async() => {
     //We go back 3 days
     for(let i = 3; i > 0 ; i--){
-        await dailyFleet(i - 1).catch(err =>{
-            console.log(`Error occured in loop: ${i}. err is: ${err}`);
-        });
+        await dailyFleet(i - 1);
+        //     .catch(err =>{
+        //     console.log(`Error occured in loop: ${i}. err is: ${err}`);
+        // });
     }
 })();
 
@@ -52,7 +52,7 @@ async function dailyFleet(daysBack) {
         var resp = await datadogClient.createTransactionQuery(fleetStats[idx].fleetID, new Date(parseInt(startTime, 10)*1000).toISOString(), new Date(parseInt(endTime, 10)*1000).toISOString());
         for (let i = 0; i < fleetStats[idx].stats.length; i++) {
             if (fleetStats[idx].stats[i].date === fmoment)  { // existing entry - update 
-                fleetStats[idx].stats[i].rentals = resp.logs.length;
+                fleetStats[idx].stats[i].rentals = resp.data.logs.length;
                 foundIt = true;
                 break;
             }

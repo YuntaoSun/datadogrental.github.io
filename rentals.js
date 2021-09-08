@@ -6,22 +6,35 @@ const moment = require('moment');
 const DatadogClient = require('./DatadogClient');
 const AxiosWrapper = require('axios-wrapper');
 const DATA_URL = './fleet_stats.json';
-// const startTime = Math.round(new Date().setUTCHours(0,0,0,0)/1000);
-// const endTime = Math.round(Date.now()/1000);
 
- const startTime = Math.round(new Date('2021-09-08T00:00:00Z').setUTCHours(0,0,0,0)/1000);
- const endTime = Math.round(new Date('2021-09-09T00:00:00Z')/1000);
+(async() => {
+    //We go back 3 days
+    for(let i = 3; i > 0 ; i--){
+        await dailyFleet(i - 1).catch(err =>{
+            console.log(`Error occured in loop: ${i}. err is: ${err}`);
+        });
+    }
+})();
 
-dailyFleet();
+async function dailyFleet(daysBack) {
+    let time = moment().utc();
+    time.hour(0);
+    time.minute(0);
+    time.second(0);
+    time.millisecond(0);
+    time.add(0 - daysBack, 'day')
 
-async function dailyFleet() {
+    let startTime = Math.round(new Date(time.toISOString()).setUTCHours(0,0,0,0)/1000);
+    time.add(1, 'day')
+    let endTime = Math.round(new Date(time.toISOString())/1000);
+
     var data = [];
     var fleetTotal = [0,0];
     var total = 0;
     var fleetStats = {};
 
     // get daily rental totals from datadog query
-    data = fs.readFileSync(DATA_URL, {encoding:'utf8', flag: 'r'});
+    data = fs.readFileSync(DATA_URL, { flag: 'r' });
     fleetStats = JSON.parse(data);
     
     var fleetIndex = 0;
@@ -79,15 +92,10 @@ async function dailyFleet() {
         });
     });
 
-    fs.writeFile(DATA_URL, updatedFleet, 'utf8', (err) => {
-        if (err) {
-            console.log(`Error writing file: ${err}`);
-        } else {
-            console.log('Successful write');
-            commitChanges(dateToday.toLocaleDateString());
-        }
-    });
-    
+    fs.writeFileSync(DATA_URL, updatedFleet, { flag: 'w'});
+
+    await commitChanges(dateToday.toLocaleDateString());
+
 }
 
 async function commitChanges(commitMsg) {

@@ -3,18 +3,17 @@
   "version": "0.0.1",
   "description": "Collection of utility scripts",
   "dependencies": {
-    "axios-wrapper": "git+ssh://git@bitbucket.org:az5/axios-wrapper.git#master",
-    "csvjson": "5.1.0",
-    "delay": "5.0.0",
-    "dotenv": "8.2.0",
-    "fs": "0.0.1-security",
-    "google-spreadsheet": "3.1.15",
-    "moment": "2.29.1",
-    "simple-git": "2.37.0",
-    "zx": "2.0.0"
+    "axios": "^0.21.4",
+    "csvjson": "^5.1.0",
+    "delay": "^5.0.0",
+    "dotenv": "^8.2.0",
+    "fs": "^0.0.1-security",
+    "google-spreadsheet": "^3.1.15",
+    "moment": "^2.29.1",
+    "simple-git": "^2.37.0",
+    "zx": "^2.0.0"
   },
   "scripts": {
-    "monthly_data": "zx monthly_data.mjs",
     "rental_stats": "node rentals.js"
   }
 }

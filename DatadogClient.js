@@ -1,8 +1,8 @@
-const AxiosWrapper = require('axios-wrapper');
+const axios = require('axios');
 
 class DatadogClient {
     constructor() {
-        this.axios = new AxiosWrapper();
+        this.axios = axios;
     }
 
     async createIntakeLog(msg) {

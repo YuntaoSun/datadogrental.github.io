@@ -61,8 +61,8 @@ async function dailyFleet(daysBack) {
             fleetStats[idx].stats.push(
                 {
                     "date": fmoment,
-                    "rentals": resp.logs.length
-                }       
+                    "rentals": resp.data.logs.length
+                }
             );
         }
 

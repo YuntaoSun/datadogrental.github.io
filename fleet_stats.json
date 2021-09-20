@@ -861,7 +861,7 @@
                 "rentals": 279
             }
         ],
-        "updated": "09-20-21 10:06"
+        "updated": "09-20-21 12:06"
     },
     {
         "fleetID": "dragon-prod",
@@ -1603,7 +1603,7 @@
                 "rentals": 54
             }
         ],
-        "updated": "09-20-21 10:06"
+        "updated": "09-20-21 12:06"
     },
     {
         "fleetID": "hercules-prod",
@@ -1945,6 +1945,6 @@
                 "rentals": 0
             }
         ],
-        "updated": "09-20-21 10:06"
+        "updated": "09-20-21 12:06"
     }
 ]

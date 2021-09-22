@@ -3,7 +3,7 @@ const simpleGit = require('simple-git');
 const git = simpleGit();
 const fs = require('fs');
 const moment = require('moment');
-const DatadogClient = require('./DatadogClient');
+const DatadogClient = require('./DatadogClient.js');
 const DATA_URL = './fleet_stats.json';
 
 (async() => {
@@ -50,10 +50,19 @@ async function dailyFleet(daysBack) {
     var foundIt = false;
     for (let idx = 0; idx < fleetStats.length; idx++) {
         var resp = await datadogClient.createTransactionQuery(fleetStats[idx].fleetID, new Date(parseInt(startTime, 10)*1000).toISOString(), new Date(parseInt(endTime, 10)*1000).toISOString());
+        //{"meta":{"status":"done","request_id":"xxxx","elapsed":3},"data":{"buckets":[{"computes":{"c0":778},"by":{}}]}}
+        console.log(JSON.stringify(resp.data));
+        let cnt = 0;
+        if(resp.data.data && resp.data.data.buckets && resp.data.data.buckets.length > 0
+            && resp.data.data.buckets[0].computes
+            && resp.data.data.buckets[0].computes.c0){
+            cnt = resp.data.data.buckets[0].computes.c0;
+        }
+
         for (let i = 0; i < fleetStats[idx].stats.length; i++) {
-            if (fleetStats[idx].stats[i].date === fmoment)  { // existing entry - update 
-                fleetStats[idx].stats[i].rentals = resp.data.logs.length;
+            if (fleetStats[idx].stats[i].date === fmoment)  { // existing entry - update
                 foundIt = true;
+                fleetStats[idx].stats[i].rentals = cnt;
                 break;
             }
         }
@@ -61,11 +70,10 @@ async function dailyFleet(daysBack) {
             fleetStats[idx].stats.push(
                 {
                     "date": fmoment,
-                    "rentals": resp.data.logs.length
+                    "rentals": cnt
                 }
             );
         }
-
     }
 
     fleetStats[0].updated = updateMoment;

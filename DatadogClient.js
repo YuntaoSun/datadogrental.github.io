@@ -13,14 +13,25 @@ class DatadogClient {
         });
     }
     async createTransactionQuery(fleetID, fromTime, toTime) {
-        return this.sendRequest('POST', '/api/v1/logs-queries/list', {
-            query: `@log.customer_id:(${fleetID}) AND service:(ridecell-api-translation)  AND \'Sent synthesis to Ridecell\' AND RENTAL_KEYS_SET`,
-            limit: 1000,
-            time: {
-                from: fromTime,
-                to: toTime,
-            },
-        });
+
+        const body ={
+            compute: [
+                {
+                    aggregation: "count",
+                    type: "total"
+                }
+            ],
+            filter: {
+                from: `${fromTime}`,
+                indexes: [
+                    "main"
+                ],
+                query: `service:ridecell-api-translation AND @log.customer_id:(${fleetID}) AND 'Sent synthesis to Ridecell' AND RENTAL_KEYS_SET`,
+                to: `${toTime}`,
+            }
+        };
+
+        return this.sendRequest('POST', '/api/v2/logs/analytics/aggregate', body);
     }
 
     async sendIntakeRequest(method, url, body) {
